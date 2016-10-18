@@ -5,7 +5,7 @@ import Electron from 'electron'
  app.on('ready', () => {
      let window = new BrowserWindow({ show: false, width: 800, height : 600 })
      
-     window.loadURL(`file:///${__dirname}/app/index.html`)
+     window.loadURL(`file:///${__dirname}/index.html`)
 
      window.webContents.on('did-finish-load', () => {
          window.show();

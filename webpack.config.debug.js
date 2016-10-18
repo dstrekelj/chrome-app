@@ -1,16 +1,18 @@
-var path = require('path');
+var path = require('path'),
+    HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var DIR_IN = path.join(__dirname, 'source');
 
 module.exports = {
     context: DIR_IN,
     entry: {
-        './debug/index': './index.js',
-        './debug/app/app': './app/app.js'
+        'index': './index.js',
+        'app/app': './app/app.js'
     },
     output: {
-        path: './',
-        filename: '[name].js'
+        path: './debug',
+        filename: '[name].js',
+        publicPath: './'
     },
     module: {
         loaders: [
@@ -21,5 +23,12 @@ module.exports = {
         __dirname: false,
         __filename: false
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            chunks: [ 'app/app' ],
+            filename: './index.html',
+            template: path.join(DIR_IN, 'index.html')
+        })
+    ],
     target: 'electron'
 }
