@@ -7,6 +7,7 @@
   "license": "Unlicense",
   "devDependencies": {
     "@types/electron": "^1.4.24",
+    "@types/node": "^6.0.45",
     "@types/react": "^0.14.41",
     "@types/react-dom": "^0.14.18",
     "babel-core": "^6.17.0",
