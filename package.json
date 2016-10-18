@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Sample application which evaluates the use of Electron and React for desktop application development.",
   "main": "index.js",
+  "scripts": {
+    "build:debug": "webpack --config webpack.config.debug.js --display-error-details",
+    "start:debug": "electron ./debug"
+  },
   "author": "dstrekelj <domagojstrekelj@gmail.com>",
   "license": "Unlicense",
   "devDependencies": {
@@ -15,6 +19,7 @@
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
     "electron": "^1.4.3",
+    "electron-debug": "^1.0.1",
     "webpack": "^1.13.2"
   },
   "dependencies": {
