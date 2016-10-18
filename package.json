@@ -1,0 +1,23 @@
+{
+  "name": "chrome-app",
+  "version": "1.0.0",
+  "description": "Sample application which evaluates the use of Electron and React for desktop application development.",
+  "main": "index.js",
+  "author": "dstrekelj <domagojstrekelj@gmail.com>",
+  "license": "Unlicense",
+  "devDependencies": {
+    "@types/electron": "^1.4.24",
+    "@types/react": "^0.14.41",
+    "@types/react-dom": "^0.14.18",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "electron": "^1.4.3",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
+}
