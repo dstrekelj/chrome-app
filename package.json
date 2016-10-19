@@ -14,6 +14,7 @@
     "@types/node": "^6.0.45",
     "@types/react": "^0.14.41",
     "@types/react-dom": "^0.14.18",
+    "@types/react-router": "^2.0.38",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
   }
 }
