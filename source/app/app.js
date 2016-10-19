@@ -2,9 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
 
-import Login from './components/Login'
-import Home from './components/Home'
-import Messages from './components/Messages'
+import Login from './pages/login/login.container'
+import Home from './pages/home/home.container'
+import Messages from './pages/messages/messages.container'
 
 const App = () => {
     return (

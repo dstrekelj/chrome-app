@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build:debug": "webpack --config webpack.config.debug.js --display-error-details",
-    "start:debug": "electron ./debug"
+    "start:debug": "electron ./debug",
+    "watch:debug": "webpack --config webpack.config.debug.js --watch"
   },
   "author": "dstrekelj <domagojstrekelj@gmail.com>",
   "license": "Unlicense",
