@@ -1,4 +1,5 @@
 import React from 'react'
+import { hashHistory } from 'react-router'
 
 import Home from './home.component'
 
