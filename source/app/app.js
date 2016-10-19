@@ -1,9 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Router, Route, hashHistory } from 'react-router'
 
-const App = (props) => {
+import Login from './components/Login'
+import Home from './components/Home'
+import Messages from './components/Messages'
+
+const App = () => {
     return (
-        <h1>Hello, World!</h1>
+        <Router history={hashHistory}>
+            <Route path="/" component={Login}/>
+            <Route path="/home" component={Home}/>
+            <Route path="/messages" component={Messages}/>
+        </Router>
     )
 }
 
