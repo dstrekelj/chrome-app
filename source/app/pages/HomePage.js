@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import MessageInput from '../components/MessageInput'
 import Messages from '../components/Messages'
 
 import UserData from '../data/UserData'
@@ -10,6 +11,7 @@ const HomePageView = (props) => {
         <div id="home" className="container">
             <h1>{props.user.fullName}</h1>
             <h2>{props.user.email}</h2>
+            <MessageInput />
             <Messages messages={props.user.messages} limit={5} />
             <Link to={`/user/${props.params.userId}/messages`}>All messages</Link>
         </div>
