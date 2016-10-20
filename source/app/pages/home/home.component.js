@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import Messages from '../../components/messages.component'
+
 export default (props) => {
     return (
         <div>
@@ -15,14 +17,7 @@ export default (props) => {
                     <span>500 characters left</span>
                 </form>
             </div>
-            <div>
-                <p>Lorem ipsum dolor sit amet</p>
-                <hr/>
-                <p>Lorem ipsum dolor sit amet</p>
-                <hr/>
-                <p>Lorem ipsum dolor sit amet</p>
-                <hr/>
-            </div>
+            <Messages messages={props.messages} />
             <div>
                 <Link to="/messages">All messages -></Link>
             </div>
