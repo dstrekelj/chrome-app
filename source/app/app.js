@@ -2,16 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
 
-import Login from './pages/login/login.container'
-import Home from './pages/home/home.container'
-import Messages from './pages/messages/messages.container'
+import LoginPage from './pages/LoginPage'
+import HomePage from './pages/HomePage'
+import MessagesPage from './pages/MessagesPage'
 
 const App = () => {
     return (
         <Router history={hashHistory}>
-            <Route path="/" component={Login}/>
-            <Route path="/home" component={Home}/>
-            <Route path="/messages" component={Messages}/>
+            <Route path="/" component={LoginPage}/>
+            <Route path="/user/:userId" component={HomePage}/>
+            <Route path="/user/:userId/messages" component={MessagesPage}/>
         </Router>
     )
 }
