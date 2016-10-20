@@ -12,7 +12,7 @@ const Message = (props) => {
 export default (props) => {
     return (
         <div className="messages">
-            {props.messages.map((v, i) => <Message key={i} message={v} />)}
+            {props.messages.slice(0, props.limit).map((v, i) => <Message key={i} message={v} />)}
         </div>
     )
 }
