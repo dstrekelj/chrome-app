@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import MessageInput from '../components/MessageInput'
 import Messages from '../components/Messages'
 
-import UserData from '../data/UserData'
+import DataRepository from '../data/DataRepository'
 
 const HomePageView = (props) => {
     return (
@@ -23,7 +23,7 @@ export default class HomePage extends React.Component {
         super(props)
 
         this.state = {
-            user: UserData
+            user: DataRepository.getUser(this.props.params.userId)
         }
     }
 

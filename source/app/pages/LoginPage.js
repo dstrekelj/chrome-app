@@ -1,7 +1,7 @@
 import React from 'react'
 import { hashHistory } from 'react-router'
 
-import UserData from '../data/UserData'
+import DataRepository from '../data/DataRepository'
 
 const LoginPageView = (props) => {
     return (
@@ -11,13 +11,16 @@ const LoginPageView = (props) => {
             <form id="login-form" onSubmit={props.handleSubmit}>
                 <input id="login-form-full-name"
                     type="text"
-                    placeholder="Your name" />
+                    placeholder="Your name"
+                    required />
                 <input id="login-form-email"
                     type="text"
-                    placeholder="Email" />
+                    placeholder="Email"
+                    required />
                 <input id="login-form-password"
                     type="text"
-                    placeholder="Password" />
+                    placeholder="Password"
+                    required />
                 <button type="submit">Login</button>
             </form>
         </div>
@@ -29,27 +32,20 @@ export default class LoginPage extends React.Component {
         super(props)
 
         this.handleSubmit = this.handleSubmit.bind(this)
-
-        this.state = {
-            user: UserData
-        }
     }
 
     handleSubmit(event) {
         event.preventDefault()
-        let formElements = event.target.elements;
-        this.setState({
-            user: {
-                fullName: formElements['login-form-full-name'].value,
-                email: formElements['login-form-email'].value 
-            }
-        }, () => hashHistory.push('/user/0'))
+        let formElements = event.target.elements
+        let user = DataRepository.getUser(0)
+        user.fullName = formElements['login-form-full-name'].value
+        user.email = formElements['login-form-email'].value
+        hashHistory.push('/user/0')
     }
 
     render() {
         return (
-            <LoginPageView handleSubmit={this.handleSubmit}
-                user={this.state.user} />
+            <LoginPageView handleSubmit={this.handleSubmit} />
         )
     }
 }

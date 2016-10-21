@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 import Messages from '../components/Messages'
 
-import UserData from '../data/UserData'
+import DataRepository from '../data/DataRepository'
 
 const MessagesPageView = (props) => {
     return (
@@ -19,7 +19,7 @@ export default class MessagesPage extends React.Component {
         super(props)
 
         this.state = {
-            user: UserData
+            user: DataRepository.getUser(this.props.params.userId)
         }
     }
 
