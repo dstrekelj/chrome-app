@@ -11,7 +11,7 @@ const HomePageView = (props) => {
         <div id="home" className="container">
             <h1>{props.user.fullName}</h1>
             <h2>{props.user.email}</h2>
-            <MessageInput handleSubmitMessage={props.handleSubmitMessage} />
+            <MessageInput limit={500} handleSubmitMessage={props.handleSubmitMessage} />
             <Messages messages={props.user.messages} limit={5} />
             <Link to={`/user/${props.params.userId}/messages`}>All messages</Link>
         </div>
