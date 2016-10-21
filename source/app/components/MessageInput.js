@@ -3,7 +3,7 @@ import React from 'react'
 const MessageInputView = (props) => {
     return (
         <form id="message-input-form" onSubmit={props.handleSubmit}>
-            <textarea></textarea>
+            <textarea id="message-input-form-text" maxLength="100" required></textarea>
             <div>
                 <button type="submit">Submit</button>
                 <span>500 characters left</span>
@@ -21,6 +21,9 @@ export default class MessageInput extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault()
+        let textarea = event.target.elements['message-input-form-text']
+        this.props.handleSubmitMessage(textarea.value)
+        textarea.value = ''
     }
 
     render() {

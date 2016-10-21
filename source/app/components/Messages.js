@@ -2,17 +2,14 @@ import React from 'react'
 
 const Message = (props) => {
     return (
-        <div className="message">
-            <p>{props.message}</p>
-            <hr/>
-        </div>
+        <li>{props.message}</li>
     )
 }
 
 export default (props) => {
     return (
-        <div className="messages">
+        <ul className="messages">
             {props.messages.slice(0, props.limit).map((v, i) => <Message key={i} message={v} />)}
-        </div>
+        </ul>
     )
 }
