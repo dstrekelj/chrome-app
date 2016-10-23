@@ -6,6 +6,8 @@ import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import MessagesPage from './pages/MessagesPage'
 
+require('./assets/styles/app.scss')
+
 const App = () => {
     return (
         <Router history={hashHistory}>

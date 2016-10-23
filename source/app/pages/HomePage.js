@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import ImageEdit from '../components/ImageEdit'
+import UserInfo from '../components/UserInfo'
 import MessageInput from '../components/MessageInput'
 import Messages from '../components/Messages'
 
@@ -8,12 +10,25 @@ import DataRepository from '../data/DataRepository'
 
 const HomePageView = (props) => {
     return (
-        <div id="home" className="container">
-            <h1>{props.user.fullName}</h1>
-            <h2>{props.user.email}</h2>
-            <MessageInput limit={500} handleSubmitMessage={props.handleSubmitMessage} />
-            <Messages messages={props.user.messages} limit={5} />
-            <Link to={`/user/${props.params.userId}/messages`}>All messages</Link>
+        <div className="wrapper">
+            <div className="container full">
+                <ImageEdit type="cover"
+                    url={props.user.imageCover} />
+                <div className="content home">
+                    <ImageEdit type="profile"
+                        url={props.user.imageProfile} />
+                    <UserInfo fullName={props.user.fullName}
+                        email={props.user.email} />
+                    <MessageInput limit={500}
+                        handleSubmitMessage={props.handleSubmitMessage} />
+                    <Messages messages={props.user.messages}
+                        limit={5} />
+                    <Link className="navigation"
+                        to={`/user/${props.params.userId}/messages`}>
+                        All messages
+                    </Link>
+                </div>
+            </div>
         </div>
     )
 }

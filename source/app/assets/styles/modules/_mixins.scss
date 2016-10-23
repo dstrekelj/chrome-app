@@ -1,0 +1,23 @@
+@mixin headings {
+  h1, h2, h3 {
+    @content
+  }
+};
+
+@mixin form-elements {
+  input, button, textarea {
+    @content
+  }
+};
+
+@mixin form-inputs {
+  input, textarea {
+    @content
+  }
+};
+
+@mixin form-buttons {
+  button {
+    @content
+  }
+};

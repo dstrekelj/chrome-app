@@ -7,9 +7,14 @@ import DataRepository from '../data/DataRepository'
 
 const MessagesPageView = (props) => {
     return (
-        <div>
-            <Link to={`/user/${props.params.userId}`}>Back to profile</Link>
-            <Messages messages={props.user.messages} />
+        <div className="container full">
+            <div className="content">
+                <Link className="navigation"
+                    to={`/user/${props.params.userId}`}>
+                    Back to profile
+                </Link>
+                <Messages messages={props.user.messages} />
+            </div>
         </div>
     )
 }

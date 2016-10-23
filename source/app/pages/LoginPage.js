@@ -1,28 +1,36 @@
 import React from 'react'
 import { hashHistory } from 'react-router'
+import fs from 'fs'
 
 import DataRepository from '../data/DataRepository'
 
 const LoginPageView = (props) => {
     return (
-        <div id="login" className="container">
-            <h1>Login</h1>
-            <p>Please enter your login informations.</p>
-            <form id="login-form" onSubmit={props.handleSubmit}>
-                <input id="login-form-full-name"
-                    type="text"
-                    placeholder="Your name"
-                    required />
-                <input id="login-form-email"
-                    type="text"
-                    placeholder="Email"
-                    required />
-                <input id="login-form-password"
-                    type="text"
-                    placeholder="Password"
-                    required />
-                <button type="submit">Login</button>
-            </form>
+        <div className="wrapper center">
+            <div className="container">
+                <form id="form-login"
+                    name="login"
+                    onSubmit={props.handleSubmit}>
+                    <h1>Login</h1>
+                    <p>Please enter your login informations.</p>
+                    <input id="login-form-full-name"
+                        type="text"
+                        placeholder="Your name"
+                        required />
+                    <input id="login-form-email"
+                        type="text"
+                        placeholder="Email"
+                        required />
+                    <input id="login-form-password"
+                        type="text"
+                        placeholder="Password"
+                        required />
+                    <button className="green"
+                        type="submit">
+                        Login
+                    </button>
+                </form>
+            </div>
         </div>
     )
 }
@@ -30,7 +38,7 @@ const LoginPageView = (props) => {
 export default class LoginPage extends React.Component {
     constructor(props) {
         super(props)
-
+        
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 

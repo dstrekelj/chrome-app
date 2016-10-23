@@ -16,7 +16,16 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'babel', include: DIR_IN }
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                include: DIR_IN
+            },
+            {
+                test: /\.scss$/,
+                loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ],
+                include: DIR_IN
+            }
         ]
     },
     node: {
@@ -30,5 +39,6 @@ module.exports = {
             template: path.join(DIR_IN, 'index.html')
         })
     ],
-    target: 'electron'
+    target: 'electron',
+    deevtool: '#inline-source-map'
 }

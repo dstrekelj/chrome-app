@@ -2,14 +2,21 @@ import React from 'react'
 
 const MessageInputView = (props) => {
     return (
-        <form id="message-input-form" onSubmit={props.handleSubmit}>
-            <textarea id="message-input-form-text"
+        <form id="form-new-message"
+            name="new-message"
+            onSubmit={props.handleSubmit}>
+            <textarea id="form-new-message-text"
+                rows="8"
                 placeholder="Your message"
                 onChange={props.handleOnChange}
                 maxLength={props.limit}
-                required></textarea>
+                required>
+            </textarea>
             <div>
-                <button type="submit">Submit</button>
+                <button className="green"
+                    type="submit">
+                    Submit
+                </button>
                 <span>{props.remainingCharacters} characters left</span>
             </div>
         </form>
@@ -30,7 +37,7 @@ export default class MessageInput extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        let textarea = event.target.elements['message-input-form-text']
+        let textarea = event.target.elements['form-new-message-text']
         this.props.handleSubmitMessage(textarea.value)
         this.setState({
             remainingCharacters: this.props.limit

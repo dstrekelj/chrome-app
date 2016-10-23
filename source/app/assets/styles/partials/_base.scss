@@ -1,0 +1,39 @@
+body {
+  color: $c-text-body;
+  min-height: 100vh;
+  background: #f9fafb;
+  font-size: $s-text-body;
+  line-height: 1.5em;
+}
+
+form {
+  @include form-elements {
+    @extend .rounded-corners;
+    font-size: $s-text-body;
+    padding: 1em;
+  }
+  
+  @include form-inputs {
+    @extend.double-border;
+  }
+  
+  @include form-buttons {
+    border: 0;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 0px $c-green-d;
+    
+    &.green {
+      background: linear-gradient(to bottom, $c-green-l, $c-green-d);
+      color: $c-white;
+    }
+  }
+}
+
+@include headings {
+  color: $c-text-heading;
+  font-family: serif;
+}
+
+h1 {
+  font-size: 2.5em;
+}
