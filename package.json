@@ -7,10 +7,10 @@
     "dev:build": "webpack --config webpack.config.dev.js --display-error-details",
     "dev:start": "electron ./dev",
     "dev:watch": "webpack --config webpack.config.dev.js --watch",
-    "prod:build": "webpack --config webpack.config.prod.js -p --progress",
-    "prod:distribute": "npm run prod:build && npm run prod:package",
-    "prod:package": "electron-packager ./app chrome-app --out ./build --overwrite",
-    "prod:start": "electron ./app"
+    "app:build": "webpack --config webpack.config.prod.js -p --progress",
+    "app:distribute": "npm run prod:build && npm run prod:package",
+    "app:package": "electron-packager ./app chrome-app --out ./build --overwrite",
+    "app:start": "electron ./app"
   },
   "author": "dstrekelj <domagojstrekelj@gmail.com>",
   "license": "Unlicense",
