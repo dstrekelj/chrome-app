@@ -7,7 +7,7 @@
     "dev:build": "webpack --config webpack.config.dev.js --display-error-details",
     "dev:start": "electron ./dev",
     "dev:watch": "webpack --config webpack.config.dev.js --watch",
-    "app:build": "webpack --config webpack.config.prod.js -p --progress",
+    "app:build": "webpack --config webpack.config.app.js -p --progress",
     "app:distribute": "npm run app:build && npm run app:package",
     "app:package": "electron-packager ./app chrome-app --out ./build --overwrite",
     "app:start": "electron ./app"
