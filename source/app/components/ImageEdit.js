@@ -1,3 +1,4 @@
+// Dependency imports
 import React, { PropTypes } from 'react'
 import { remote } from 'electron'
 import path from 'path'
@@ -18,22 +19,40 @@ const propTypes = {
     handleImageChange: PropTypes.func.isRequired
 }
 
-const ImageEditView = (props) => {
-    return (
-        <div className={`image-edit ${props.type}`}>
-            <img src={props.url} />
-            <button onClick={props.handleOnClick} />
-        </div>
-    )
-}
-
+/**
+ * The ImageEdit component is a compound component. It
+ * consists of an image (which can be changed / edited) and
+ * a button (which triggers a dialog for selecting a new
+ * image).
+ * 
+ * @export
+ * @class ImageEdit
+ * @extends {React.Component}
+ */
 export default class ImageEdit extends React.Component {
+    /**
+     * Creates an instance of ImageEdit.
+     * 
+     * @param {any} props
+     * 
+     * @memberOf ImageEdit
+     */
     constructor(props) {
         super(props)
 
         this.handleOnClick = this.handleOnClick.bind(this);
     }
 
+    /**
+     * Handles edit button click. Opens a dialog for
+     * selecting a new image file to be base64 encoded and
+     * used by the application. Triggers a call to the
+     * parent component's `handleImageChange()` method,
+     * which provides the parent with the ImageEdit
+     * component type, and the new image file data.
+     * 
+     * @memberOf ImageEdit
+     */
     handleOnClick() {
         let window = remote.getCurrentWindow()
         remote.dialog.showOpenDialog(
@@ -55,13 +74,19 @@ export default class ImageEdit extends React.Component {
         )
     }
 
+    /**
+     * Renders ImageEdit component.
+     * 
+     * @returns
+     * 
+     * @memberOf ImageEdit
+     */
     render() {
         return (
-            <ImageEditView
-                type={this.props.type}
-                url={this.props.url}
-                handleOnClick={this.handleOnClick}
-            />
+            <div className={`image-edit ${this.props.type}`}>
+                <img src={this.props.url} />
+                <button onClick={this.handleOnClick} />
+            </div>
         )
     }
 }

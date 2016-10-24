@@ -1,11 +1,13 @@
+// Dependency imports
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
-
+// App imports
 import LoginPage from './pages/LoginPage'
 import HomePage from './pages/HomePage'
 import MessagesPage from './pages/MessagesPage'
 
+// Include global stylesheet
 require('./assets/styles/app.scss')
 
 const App = () => {

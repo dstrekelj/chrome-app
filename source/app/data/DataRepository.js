@@ -1,5 +1,6 @@
-import fs from 'fs'
-
+/**
+ * Hardcoded user data.
+ */
 let UserData = {
     fullName: 'John Doe',
     email: 'john.doe@mail.com',

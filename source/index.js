@@ -1,6 +1,11 @@
-import Electron from 'electron'
+// Dependency imports
+import { app, BrowserWindow } from 'electron'
 
-const { app, BrowserWindow } = Electron
+/**
+ * Application entry point. Creates new browser window and
+ * sets it up to open the index HTML file loading the app
+ * script.
+ */
 
 app.on('ready', () => {
     let window = new BrowserWindow({ show: false, width: 920, height : 600 })
