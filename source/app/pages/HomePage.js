@@ -40,6 +40,8 @@ export default class HomePage extends React.Component {
         super(props)
 
         let window = Electron.remote.getCurrentWindow()
+        window.setResizable(true)
+        window.setMinimumSize(920, 540)
         window.setSize(920, 920)
         window.center()
 
