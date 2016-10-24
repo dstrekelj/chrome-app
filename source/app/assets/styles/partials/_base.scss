@@ -17,7 +17,7 @@ form {
     @extend.double-border;
 
     &:invalid {
-      border-color: $c-red-l;
+      color: $c-red-d;
     }
   }
   
