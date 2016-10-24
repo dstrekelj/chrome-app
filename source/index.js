@@ -3,7 +3,7 @@ import Electron from 'electron'
 const { app, BrowserWindow } = Electron
 
 app.on('ready', () => {
-    let window = new BrowserWindow({ show: false, width: 920, height : 540 })
+    let window = new BrowserWindow({ show: false, width: 920, height : 600 })
     window.setResizable(false);
     
     window.loadURL(`file:///${__dirname}/index.html`)

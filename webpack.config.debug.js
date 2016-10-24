@@ -29,9 +29,14 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ],
+                loaders: [ 'style', 'css', 'sass' ],
                 include: DIR_IN
-            }
+            },
+            {
+                test: /\.(jpg|jpeg|png|bmp)$/,
+                loader: 'file',
+                include: DIR_IN
+            },
         ]
     },
     node: {
