@@ -4,9 +4,12 @@
   "description": "Sample application which evaluates the use of Electron and React for desktop application development.",
   "main": "index.js",
   "scripts": {
-    "build:debug": "webpack --config webpack.config.debug.js --display-error-details",
-    "start:debug": "electron ./debug",
-    "watch:debug": "webpack --config webpack.config.debug.js --watch"
+    "dev:build": "webpack --config webpack.config.dev.js --display-error-details",
+    "dev:start": "electron ./dev",
+    "dev:watch": "webpack --config webpack.config.dev.js --watch",
+    "prod:build": "webpack --config webpack.config.prod.js -p --progress",
+    "prod:start": "electron ./app",
+    "prod:package": "npm run prod:build && electron-packager ./ chrome-app"
   },
   "author": "dstrekelj <domagojstrekelj@gmail.com>",
   "license": "Unlicense",
@@ -25,6 +28,7 @@
     "css-loader": "^0.25.0",
     "electron": "^1.4.3",
     "electron-debug": "^1.0.1",
+    "electron-packager": "^8.1.0",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.22.0",
     "json-loader": "^0.5.4",

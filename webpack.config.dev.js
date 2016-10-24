@@ -10,7 +10,7 @@ module.exports = {
         'app/app': './app/app.js'
     },
     output: {
-        path: './debug',
+        path: './dev',
         filename: '[name].js',
         publicPath: './'
     },

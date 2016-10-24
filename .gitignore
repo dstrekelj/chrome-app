@@ -1,5 +1,6 @@
 .vscode/settings.json
-debug/*
+dev/*
+prod/*
 node_modules/*
 raw/*
 *.log.*
