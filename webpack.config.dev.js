@@ -34,7 +34,7 @@ module.exports = {
             },
             {
                 test: /\.(jpg|jpeg|png|bmp)$/,
-                loader: 'file',
+                loader: 'file?name=./assets/[hash].[ext]',
                 include: DIR_IN
             },
         ]
