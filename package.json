@@ -8,8 +8,9 @@
     "dev:start": "electron ./dev",
     "dev:watch": "webpack --config webpack.config.dev.js --watch",
     "prod:build": "webpack --config webpack.config.prod.js -p --progress",
-    "prod:start": "electron ./app",
-    "prod:package": "npm run prod:build && electron-packager ./ chrome-app"
+    "prod:distribute": "npm run prod:build && npm run prod:package",
+    "prod:package": "electron-packager ./app chrome-app --out ./build",
+    "prod:start": "electron ./app"
   },
   "author": "dstrekelj <domagojstrekelj@gmail.com>",
   "license": "Unlicense",
@@ -25,6 +26,7 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
+    "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.25.0",
     "electron": "^1.4.3",
     "electron-debug": "^1.0.1",

@@ -1,0 +1,8 @@
+{
+    "name": "chrome-app",
+    "productName": "Chrome App",
+    "description": "Electron + React application",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "dstrekelj <domagojstrekelj@gmail.com>"
+}

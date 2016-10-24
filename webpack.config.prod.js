@@ -1,5 +1,6 @@
 var path = require('path'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var DIR_IN = path.join(__dirname, 'source');
 
@@ -48,7 +49,10 @@ module.exports = {
             chunks: [ 'app/app' ],
             filename: './index.html',
             template: path.join(DIR_IN, 'index.html')
-        })
+        }),
+        new CopyWebpackPlugin([
+            { from: './package.json' }
+        ])
     ],
     target: 'electron'
 }
