@@ -1,4 +1,9 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
+
+const propTypes = {
+    handleSubmitMessage: PropTypes.func.isRequired,
+    limit: PropTypes.number.isRequired
+}
 
 const MessageInputView = (props) => {
     return (
@@ -58,3 +63,5 @@ export default class MessageInput extends React.Component {
             remainingCharacters={this.state.remainingCharacters} />
     }
 }
+
+MessageInput.propTypes = propTypes
