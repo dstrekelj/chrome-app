@@ -9,7 +9,7 @@
     "dev:watch": "webpack --config webpack.config.dev.js --watch",
     "prod:build": "webpack --config webpack.config.prod.js -p --progress",
     "prod:distribute": "npm run prod:build && npm run prod:package",
-    "prod:package": "electron-packager ./app chrome-app --out ./build",
+    "prod:package": "electron-packager ./app chrome-app --out ./build --overwrite",
     "prod:start": "electron ./app"
   },
   "author": "dstrekelj <domagojstrekelj@gmail.com>",
