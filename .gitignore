@@ -2,3 +2,4 @@
 debug/*
 node_modules/*
 raw/*
+*.log.*
