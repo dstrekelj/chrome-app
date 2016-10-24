@@ -15,6 +15,10 @@ form {
   
   @include form-inputs {
     @extend.double-border;
+
+    &:invalid {
+      border-color: $c-red-l;
+    }
   }
   
   @include form-buttons {

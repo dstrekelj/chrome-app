@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import Electron from 'electron'
+
 import ImageEdit from '../components/ImageEdit'
 import UserInfo from '../components/UserInfo'
 import MessageInput from '../components/MessageInput'
@@ -36,6 +38,10 @@ const HomePageView = (props) => {
 export default class HomePage extends React.Component {
     constructor(props) {
         super(props)
+
+        let window = Electron.remote.getCurrentWindow()
+        window.setSize(920, 920)
+        window.center()
 
         this.handleSubmitMessage = this.handleSubmitMessage.bind(this)
 

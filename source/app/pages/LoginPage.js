@@ -18,11 +18,12 @@ const LoginPageView = (props) => {
                         placeholder="Your name"
                         required />
                     <input id="login-form-email"
-                        type="text"
+                        type="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                         placeholder="Email"
                         required />
                     <input id="login-form-password"
-                        type="text"
+                        type="password"
                         placeholder="Password"
                         required />
                     <button className="green"
