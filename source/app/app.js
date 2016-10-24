@@ -10,7 +10,7 @@ require('./assets/styles/app.scss')
 
 const App = () => {
     return (
-        <Router history={hashHistory}>
+        <Router onUpdate={()=> window.scrollTo(0, 0)} history={hashHistory}>
             <Route path="/" component={LoginPage}/>
             <Route path="/user/:userId" component={HomePage}/>
             <Route path="/user/:userId/messages" component={MessagesPage}/>
